@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display:wght@400;700&display=swap');
+
+
+.brand {
+  font-family: 'Protest Revolution', sans-serif;
+  font-weight: bolder;
+}
+
+h1{
+  font-family: 'Protest Riot', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+
+h2{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bolder;
+}
+
+.bg {
+  font-weight: bolder;
+  background-color: black;
+}
+
+.bg li {
+  padding: 0px 10px 0px 10px;
+}
+
+.bg li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.intro {
+  margin-top: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro h1 {
+  font-weight: bolder;
+  font-size: 36px;
+}
+
+.intro input {
+  width: 400px;
+  height: 40px;
+  padding: 15px;
+  border-width: 1px;
+  border-radius: 100px;
+  outline: none;
+}
+
+.intro button {
+  background-color: black;
+  color: whitesmoke;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 20px 10px 20px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .intro input {
+    width: 100%;
+  }
+  .intro button{
+    margin-top: 10px;
+  }
+}
+
+.wrapitems{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu{
+  margin: 15px;
+  padding: 20px;
+  border-radius: 1rem;
+}
+.menu h3{
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+div.menu{
+  background-color: orange;
+  box-shadow: 0 3px 3px 1px gray;
+  cursor: pointer;
+}
+div.menu img{
+  transition: 0.6s;
+}
+div.menu img:hover{
+  transform: scale(1.1);
+}
+
+div.menuitems{
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+}
+.menuitems img{
+  width: 200px;
+  height: 200px;
+}
+.menuitems h3{
+  font-size: 18px;
+}
+.menuitems button{
+  background-color: black;
+  color: whitesmoke;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  width: 200px;
+  padding: 10px;
+}
+.menuitems button:hover{
+  background-color: rgb(45, 39, 39);
+}
+
+.country{
+  font-weight: bolder;
+  padding: 10px;
+}
+.country > div{
+  background-color: orangered;
+  color: whitesmoke;
+  padding: 15px;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+.country > div:hover{
+  background-color: rgb(232, 72, 13);
+}
+
+.details {
+  display: inline-block;
+}
+
+.details p {
+  font-size: 18px;
+}
+
+.details .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.details .col-6 {
+  flex: 0 0 50%;
+  max-width: 400px;
+  padding: 10px;
+}
+
+.details img {
+  width: 100%; 
+  max-width: 100%; 
+  height: auto; 
+}
+
+@media screen and (max-width: 768px) {
+  .details .col-6{
+    flex: 0 0 100%;
+    max-width: 300px;
+  }
+}
+
+.ingredient{
+  background-color: orange;
+  box-shadow: 0 3px 3px 1px gray;
+  color: black;
+  border-radius: 10px;
+}
+
+.ingredient div{
+  padding: 20px;
+}
+
+.instruction{
+  padding: 50px 100px 50px 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .instruction {
+    padding:50px;
+  }
+}
+
+.btnheart{
+  background-color: white;
+  border: none;
+  color: red;
+
+}
