@@ -1,5 +1,3 @@
-
-
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -30,8 +28,8 @@ const CountryItem = () => {
                             <div className='menuitems'>
                                 <img src={meals1.strMealThumb} alt="" />
                                 <h3>{meals1.strMeal}</h3>
-                                <Link to={`/ingredients/${meals1.idMeal}`} style={{textDecoration:'none'}}>
-                                <button>View Details</button>
+                                <Link to={`/ingredients/${meals1.idMeal}`} style={{ textDecoration: 'none' }}>
+                                    <button>View Details</button>
                                 </Link>
                             </div>
                         </div>

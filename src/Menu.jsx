@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import MenuItems from './MenuItems'
 
 const Menu = () => {
 
     const [categories, setCategories] = useState([])
-
-    const navigate = useNavigate()
-
 
     useEffect(() => {
         let fetchdata = async () => {

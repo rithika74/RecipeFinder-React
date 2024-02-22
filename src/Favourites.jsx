@@ -1,30 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { removefav } from './DataSlice';
 
 const Favourites = () => {
+    const favorites = useSelector((state) => state.datastore.fav);
+    const dispatch = useDispatch();
 
-  const result = useSelector((state) => state.datastore.fav)
-  console.log(result);
+    const removeFromFavorites = (mealId) => {
+        dispatch(removefav(mealId));
+    };
 
-  return (
-    <div>
-      {result?.map((item) => (
-        item && (
-          <div className='menu' key={item.idMeal}>
-          <div className='menuitems'>
-            <img src={item.strMealThumb} alt="" />
-            <h3>{item.strMeal}</h3>
-            <Link to={`/ingredients/${item.idMeal}`} style={{ textDecoration: 'none' }}>
-              <button>View Details</button>
-            </Link>
-          </div>
+    return (
+        <div>
+            {favorites.length === 0 ? (
+                <div style={{ marginTop: '200px', textAlign: 'center', color: 'gray' }}>
+                    <h3>No Favourites</h3>
+                </div>
+            ) : (
+                <div className='wrapitems' style={{ marginTop: '150px' }}>
+                    {favorites.map((favorite) => (
+                        <div className='menu' key={favorite.mealId}>
+                            <div className='menuitems'>
+                                <Link to={`/ingredients/${favorite.mealId}`} style={{ textDecoration: 'none' }}>
+                                    <img src={favorite.image} alt={favorite.name} />
+                                </Link>
+                                <h3>{favorite.name}</h3>
+                                <button onClick={() => removeFromFavorites(favorite.mealId)} style={{ marginTop: '15px' }}>Remove</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
-        )
-      ))}
-    </div>
-  )
+    )
 }
 
-export default Favourites
+export default Favourites;

@@ -8,15 +8,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Home';
 import Intro from './Intro';
-import SearchItems from './SearchItems';
 import Allitems from './Allitems';
 import Favourites from './Favourites';
 import Country from './Country';
 import MenuItems from './MenuItems';
 import CountryItem from './CountryItem';
 import Ingredients from './Ingredients';
-import Search from './Search';
-import Menu from './Menu';
 import { Provider } from 'react-redux';
 import { Store } from './Store';
 
@@ -24,7 +21,6 @@ import { Store } from './Store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Home /> */}
     <Provider store={Store}>
       <BrowserRouter>
         <Routes>
@@ -36,7 +32,6 @@ root.render(
             <Route path='/menuitems/:category' element={<MenuItems />} />
             <Route path='/countryitem/:area' element={<CountryItem />} />
             <Route path='/ingredients/:mealId' element={<Ingredients />} />
-            <Route path='/searchitem' element={<SearchItems />} />
           </Route>
 
         </Routes>

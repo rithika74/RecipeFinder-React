@@ -14,16 +14,16 @@ const DataSlice = createSlice({
         setsearchdatas: (state, actions) => {
             state.searchdatas = actions.payload
         },
-        setfav: (state, actions) => {
-            const newItem = actions.payload;
-            const isDuplicate = state.fav.find((item) => item.id === newItem.id);
+        setfav: (state, action) => {
+            const newItem = action.payload;
+            const isDuplicate = state.fav.find((item) => item.mealId === newItem.mealId);
             if (!isDuplicate) {
                 state.fav.push(newItem);
             }
         },
         removefav: (state, action) => {
             const remove = action.payload;
-            state.fav = state.fav.filter((item) => item.id !== remove)
+            state.fav = state.fav.filter((item) => item.mealId !== remove)
         },
 
     },
@@ -32,3 +32,4 @@ const DataSlice = createSlice({
 export const { setsearchdatas, setfav, removefav, setSelectedProductId } = DataSlice.actions
 
 export default DataSlice.reducer
+

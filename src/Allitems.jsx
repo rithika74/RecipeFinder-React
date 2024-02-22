@@ -11,16 +11,6 @@ const Allitems = () => {
   const [clicked, setClicked] = useState(false)
   const { mealName } = useParams()
 
-  useEffect(() => {
-    let fetchdata = async () => {
-      const response = await axios.get(`https://themealdb.com/api/json/v1/1/search.php?f=c`)
-      console.log(response);
-      setItems(response.data.meals)
-    }
-    fetchdata()
-  }, [])
-  console.log("kjhhkj", items);
-
   const handleChange = (event) => {
     setResult(event.target.value);
   }

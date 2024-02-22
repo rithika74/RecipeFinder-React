@@ -3,9 +3,7 @@ import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Intro from './Intro';
 import { Link, Outlet } from 'react-router-dom';
-import img from './logo.png';
 
 const Home = () => {
     const [expanded, setExpanded] = useState(false);
@@ -18,14 +16,9 @@ const Home = () => {
 
             <header>
                 <Navbar expand="lg" className="bg fixed-top ">
-                    <Container>
+                    <Container style={{ padding: '10px' }}>
                         <Navbar.Brand href="#home" className='brand' style={{ color: 'whitesmoke', fontSize: '36px' }}>
                             Bon Appetit
-                            {/* <div className='d-flex'>
-                                <div>Bon Appetit</div>
-                                <div className='' style={{marginTop:'-20px'}}><img src={img} alt="" width={'100px'} /></div>
-                            </div> */}
-
                         </Navbar.Brand>
                         <Navbar.Toggle onClick={toggleNavbar} aria-controls="basic-navbar-nav">
                             {expanded ? <span style={{ color: 'white' }}>&times;</span> : <span style={{ color: 'white' }}>&#9776;</span>}

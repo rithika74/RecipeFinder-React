@@ -1,16 +1,14 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
-import { setfav, removefav, } from './DataSlice';
+import { setfav, removefav } from './DataSlice';
 
 const Ingredients = () => {
-
     const [mealDetails, setMealDetails] = useState('');
-    const { mealId } = useParams()
-    const dispatch = useDispatch()
+    const { mealId } = useParams();
+    const dispatch = useDispatch();
     const favorites = useSelector((state) => state.datastore.fav);
 
     useEffect(() => {
@@ -34,7 +32,7 @@ const Ingredients = () => {
                 }
 
                 const mealData = {
-                    id:meal.idMeal,
+                    mealId: meal.idMeal,
                     name: meal.strMeal,
                     image: meal.strMealThumb,
                     instructions: meal.strInstructions,
@@ -47,32 +45,33 @@ const Ingredients = () => {
         }
 
         fetchMealDetails();
-    }, []);
+    }, [mealId]);
 
-    const isFavorite = favorites.find((item) => item.mealId === mealDetails.idMeal);
+    const isFavorite = favorites.find((item) => item.mealId === mealDetails.mealId);
 
     const addToFavorites = () => {
-        const newItem = { mealId: mealDetails.idMeal, ...mealDetails };
-        dispatch(setfav(newItem));
-        console.log("fav", favorites);
-    }
+        const isDuplicate = favorites.find((item) => item.mealId === mealDetails.mealId);
+        if (!isDuplicate) {
+            dispatch(setfav(mealDetails));
+        }
+    };
 
-    const handleDelete = (mealId) => {
-        dispatch(removefav(mealId))
-    }
 
+    const handleDelete = () => {
+        dispatch(removefav(mealDetails.mealId));
+    }
 
     return (
         <>
             <div style={{ marginTop: '120px' }}>
                 {mealDetails && (
-                    <div className='details' key={mealDetails.idMeal}>
+                    <div className='details' key={mealDetails.mealId}>
                         <h1>{mealDetails.name}</h1>
                         <div className='container'>
                             <div className='col-6'>
-                                <img src={mealDetails.image} alt={mealDetails.name} style={{ width: '100%' }} />
+                                <img src={mealDetails.image} alt={mealDetails.name} style={{ width: '100%', marginBottom: '20px' }} />
+                                <h2 style={{ fontSize: '24px' }}>ADD TO FAVOURITES <button className='btnheart' onClick={isFavorite ? handleDelete : addToFavorites} >{isFavorite ? <FaHeart /> : <FaRegHeart />} </button></h2>
                             </div>
-                            <div>ADD TO FAVOURITES <button className='btnheart' onClick={isFavorite ? () => handleDelete(mealDetails.idMeal) : addToFavorites} >{isFavorite ? <FaHeart /> : <FaRegHeart />} </button></div>
                             <div className='col-6 ingredient'>
                                 <div>
                                     <h2>Ingredients</h2>
@@ -93,7 +92,6 @@ const Ingredients = () => {
             </div>
         </>
     )
-
 }
 
-export default Ingredients
+export default Ingredients;

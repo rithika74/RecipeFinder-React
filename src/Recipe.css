@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Revolution:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
 
 .brand {
   font-family: 'Protest Revolution', sans-serif;
   font-weight: bolder;
 }
 
-h1{
+h1 {
   font-family: 'Protest Riot', sans-serif;
   font-weight: bolder;
   text-align: center;
 }
 
-h2{
+h2 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: bolder;
 }
@@ -69,54 +70,99 @@ h2{
   .intro input {
     width: 100%;
   }
-  .intro button{
+
+  .intro button {
     margin-top: 10px;
   }
 }
 
-.wrapitems{
+
+.intro2 {
+  margin-top: 200px;
+}
+
+.intro2 img {
+  width: 100%;
+  height: 400px;
+}
+
+.text div {
+  font-family: "Fascinate Inline", system-ui;
+  color: rgb(219, 145, 7);
+  font-size: 60px;
+  font-weight: bolder;
+  padding-bottom: 20px;
+}
+
+.intro2 button {
+  background-color: black;
+  color: whitesmoke;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 20px;
+}
+
+@media(max-width:768px) {
+  .text div {
+    font-size: 40px;
+  }
+
+  .intro2 {
+    margin-top: 100px;
+  }
+}
+
+.wrapitems {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.menu{
+.menu {
   margin: 15px;
   padding: 20px;
   border-radius: 1rem;
 }
-.menu h3{
+
+.menu h3 {
   color: black;
   font-size: 24px;
   font-weight: bold;
   padding-top: 20px;
 }
-div.menu{
+
+div.menu {
   background-color: orange;
   box-shadow: 0 3px 3px 1px gray;
   cursor: pointer;
 }
-div.menu img{
+
+div.menu img {
   transition: 0.6s;
 }
-div.menu img:hover{
+
+div.menu img:hover {
   transform: scale(1.1);
 }
 
-div.menuitems{
+div.menuitems {
   padding: 10px;
   width: 300px;
   text-align: center;
 }
-.menuitems img{
+
+.menuitems img {
   width: 200px;
   height: 200px;
 }
-.menuitems h3{
+
+.menuitems h3 {
   font-size: 18px;
 }
-.menuitems button{
+
+.menuitems button {
   background-color: black;
   color: whitesmoke;
   font-weight: 500;
@@ -125,15 +171,17 @@ div.menuitems{
   width: 200px;
   padding: 10px;
 }
-.menuitems button:hover{
+
+.menuitems button:hover {
   background-color: rgb(45, 39, 39);
 }
 
-.country{
+.country {
   font-weight: bolder;
   padding: 10px;
 }
-.country > div{
+
+.country>div {
   background-color: orangered;
   color: whitesmoke;
   padding: 15px;
@@ -141,7 +189,8 @@ div.menuitems{
   text-align: center;
   cursor: pointer;
 }
-.country > div:hover{
+
+.country>div:hover {
   background-color: rgb(232, 72, 13);
 }
 
@@ -167,42 +216,41 @@ div.menuitems{
 }
 
 .details img {
-  width: 100%; 
-  max-width: 100%; 
-  height: auto; 
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .details .col-6{
+  .details .col-6 {
     flex: 0 0 100%;
     max-width: 300px;
   }
 }
 
-.ingredient{
+.ingredient {
   background-color: orange;
   box-shadow: 0 3px 3px 1px gray;
   color: black;
   border-radius: 10px;
 }
 
-.ingredient div{
+.ingredient div {
   padding: 20px;
 }
 
-.instruction{
+.instruction {
   padding: 50px 100px 50px 100px;
 }
 
 @media screen and (max-width: 768px) {
   .instruction {
-    padding:50px;
+    padding: 50px;
   }
 }
 
-.btnheart{
+.btnheart {
   background-color: white;
   border: none;
   color: red;
-
 }
