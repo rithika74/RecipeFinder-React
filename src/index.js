@@ -4,7 +4,6 @@ import './index.css';
 import './Recipe.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Home';
 import Intro from './Intro';
